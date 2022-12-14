@@ -14,6 +14,11 @@ app.get("/", (req, res) => {
   res.send("Welcome to the Astrology App!");
 });
 
+// 404 PAGE
+app.get("*", (req, res) => {
+  res.status(404).json({ error: "Page not found" });
+});
+
 app.listen(3003, () => {
   console.log("Listening for requests on port 3003");
 });
